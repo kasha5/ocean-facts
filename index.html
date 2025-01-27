@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ocean Facts</h1>
+        <button id="showFactsButton">Show Facts</button>
+        <ul id="factsList" class="hidden"></ul>
+    </div>
+    <script>
+        document.getElementById('showFactsButton').addEventListener('click', function() {
+            const facts = [
+                {
+                    fact: "Size and Coverage",
+                    description: "The ocean covers more than 70% of Earth's surface and contains about 97% of the planet's water."
+                },
+                {
+                    fact: "Depth",
+                    description: "The average depth of the ocean is about 3,688 meters (12,100 feet), with the deepest part being the Mariana Trench, which reaches a depth of approximately 11,034 meters (36,201 feet)."
+                },
+                {
+                    fact: "Biodiversity",
+                    description: "The ocean is home to a vast array of life forms, from microscopic plankton to the largest animal on Earth, the blue whale. It is estimated that more than 80% of the ocean is still unexplored and could contain millions of undiscovered species."
+                },
+                {
+                    fact: "Oxygen Production",
+                    description: "Oceans produce more than half of the world's oxygen through the photosynthesis of phytoplankton, algae, and other marine plants."
+                },
+                {
+                    fact: "Temperature Regulation",
+                    description: "The ocean plays a crucial role in regulating Earth's climate by absorbing heat from the sun and distributing it around the globe through currents."
+                },
+                {
+                    fact: "Salinity",
+                    description: "Ocean water is salty, with an average salinity of about 35 parts per thousand. This salinity is primarily due to the presence of dissolved salts, such as sodium chloride."
+                },
+                {
+                    fact: "Tides",
+                    description: "Ocean tides are caused by the gravitational pull of the moon and the sun on Earth's oceans, resulting in the regular rise and fall of sea levels."
+                },
+                {
+                    fact: "Currents",
+                    description: "Ocean currents, such as the Gulf Stream, are large-scale flows of water that move heat and nutrients around the planet, influencing weather patterns and marine life."
+                },
+                {
+                    fact: "Coral Reefs",
+                    description: "Often referred to as the 'rainforests of the sea,' coral reefs are diverse underwater ecosystems that provide habitat and protection for many marine species."
+                },
+                {
+                    fact: "Human Impact",
+                    description: "The ocean is affected by human activities, including pollution, overfishing, and climate change, which threaten marine ecosystems and biodiversity. Conservation efforts are crucial to protect and preserve ocean health."
+                }
+            ];
+
+            const factsList = document.getElementById('factsList');
+            factsList.innerHTML = ''; // Clear any existing content
+            facts.forEach(fact => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<strong>${fact.fact}:</strong> ${fact.description}`;
+                factsList.appendChild(listItem);
+            });
+            factsList.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
